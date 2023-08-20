@@ -19,12 +19,13 @@ type App struct {
 
 func New() (*App, error) {
 	app := &App{}
-	app.database.Db = storage.New()
+	app.database = storage.New()
 	app.service = service.New(app.database)
 	app.endpoint = endpoint.New(app.service)
 	app.echo = echo.New()
 	//endpoit
 	app.echo.GET("/jwt", app.endpoint.GetJwt)
+	app.echo.GET("/secret", app.endpoint.Secret)
 	//app.echo.GET("/refresh", app.endpoint.RefreshTokens)
 	//app.echo.GET("/secret", app.endpoint.DeleteUser, app.endpoint.ValidateJWT)
 

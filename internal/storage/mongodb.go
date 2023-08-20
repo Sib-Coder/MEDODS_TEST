@@ -19,7 +19,7 @@ type Database struct {
 	Db *mongo.Client
 }
 
-func New() *mongo.Client {
+func New() *Database {
 	clientOptions := options.Client().ApplyURI(mongoURI) // Connect to //MongoDB
 	client, err := mongo.Connect(context.TODO(), clientOptions)
 	if err != nil {
@@ -31,7 +31,9 @@ func New() *mongo.Client {
 		log.Fatal(err)
 	}
 	fmt.Println("Connected to MongoDB!")
-	return client
+	return &Database{
+		Db: client,
+	}
 }
 
 func (db *Database) SelectInfoUser(idx string) (model.Traning, error) {
@@ -58,9 +60,13 @@ func (db *Database) SelectInfoUser(idx string) (model.Traning, error) {
 func (db *Database) UpdateRefresh(idx string, reftoken string) (bool, error) {
 	collection := db.Db.Database("modods").Collection("modods")
 	// обновление документов
+	//преобразование строки
+
 	// create filter for document to fund
+	fmt.Println(idx)
 	id, err := primitive.ObjectIDFromHex(idx)
 	if err != nil {
+		fmt.Println("ТУТ")
 		fmt.Println(err)
 		return false, err
 	}

@@ -1,6 +1,5 @@
 package endpoint
 
-//
 //import (
 //	"awesomeProject13/internal/model"
 //	"fmt"
@@ -43,16 +42,16 @@ package endpoint
 //				if err != nil {
 //					ctx.String(http.StatusUnauthorized, "not valid token")
 //				}
-//				nick := reftoken.Claims.(jwt.MapClaims)["nick"].(string)
+//				idx := reftoken.Claims.(jwt.MapClaims)["idx"].(string)
 //				//добавить проверку токена из бд
-//				dbtoken, err := e.s.GetRefToken(nick)
+//				dbtoken, err := e.s.GetRefToken(idx) //получение токена из базы для сравнения
 //				if err != nil {
 //					//return err
 //					ctx.String(http.StatusUnauthorized, "not authorized: ")
 //				}
 //				rt, err := reftoken.SignedString([]byte(SECRET))
 //				if dbtoken == rt {
-//					token, refresh, err := e.CreateJWT(nick)
+//					token, refresh, err := e.CreateJWT(idx)
 //					if err != nil {
 //						ctx.String(http.StatusUnauthorized, "not authorized: ")
 //					}

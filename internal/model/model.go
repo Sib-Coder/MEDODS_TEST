@@ -9,3 +9,6 @@ type Traning struct {
 	Secter  string `json:"Secter"`
 	Refresh string `json:"Refresh"`
 }
+type User struct {
+	ID string `query:"id"`
+}
