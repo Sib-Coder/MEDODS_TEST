@@ -1,7 +1,7 @@
 package storage
 
 import (
-	"awesomeProject13/internal/model"
+	"awesomeProject/internal/model"
 	"context"
 	"fmt"
 	"go.mongodb.org/mongo-driver/bson"
@@ -59,14 +59,10 @@ func (db *Database) SelectInfoUser(idx string) (model.Traning, error) {
 
 func (db *Database) UpdateRefresh(idx string, reftoken string) (bool, error) {
 	collection := db.Db.Database("modods").Collection("modods")
-	// обновление документов
-	//преобразование строки
 
-	// create filter for document to fund
 	fmt.Println(idx)
 	id, err := primitive.ObjectIDFromHex(idx)
 	if err != nil {
-		fmt.Println("ТУТ")
 		fmt.Println(err)
 		return false, err
 	}

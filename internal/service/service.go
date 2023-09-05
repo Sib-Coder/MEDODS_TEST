@@ -1,6 +1,6 @@
 package service
 
-import "awesomeProject13/internal/model"
+import "awesomeProject/internal/model"
 
 type Database interface {
 	UpdateRefresh(idx string, reftoken string) (bool, error)

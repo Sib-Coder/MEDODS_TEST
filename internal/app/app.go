@@ -1,9 +1,9 @@
 package app
 
 import (
-	"awesomeProject13/internal/endpoint"
-	"awesomeProject13/internal/service"
-	"awesomeProject13/internal/storage"
+	"awesomeProject/internal/endpoint"
+	"awesomeProject/internal/service"
+	"awesomeProject/internal/storage"
 	"errors"
 	"fmt"
 	"github.com/labstack/echo/v4"
@@ -25,9 +25,9 @@ func New() (*App, error) {
 	app.echo = echo.New()
 	//endpoit
 	app.echo.GET("/jwt", app.endpoint.GetJwt)
-	app.echo.GET("/secret", app.endpoint.Secret)
+	//app.echo.GET("/secret", app.endpoint.Secret)
 	//app.echo.GET("/refresh", app.endpoint.RefreshTokens)
-	//app.echo.GET("/secret", app.endpoint.DeleteUser, app.endpoint.ValidateJWT)
+	app.echo.GET("/secret", app.endpoint.Secret, app.endpoint.ValidateJWT)
 
 	return app, nil
 }

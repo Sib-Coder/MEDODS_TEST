@@ -1,7 +1,7 @@
 package endpoint
 
 import (
-	"awesomeProject13/internal/model"
+	"awesomeProject/internal/model"
 	"fmt"
 	"github.com/labstack/echo/v4"
 	"net/http"

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"awesomeProject13/internal/app"
+	"awesomeProject/internal/app"
 	"errors"
 	"log"
 )
@@ -20,10 +20,9 @@ func main() {
 
 //func main() {
 //
-//	newMongo := storage.Database{}
-//	newMongo.Db = storage.New()
-//	//res, err := newMongo.SelectInfoUser("64e1ade986a817525a13d9fd")
-//	//fmt.Println(res, " \n", err)
+//	newMongo := storage.New()
+//	res, err := newMongo.SelectInfoUser("64f6a9fcc2ae96c8244a81ce")
+//	fmt.Println(res, " \n", err)
 //
 //	res1, err := newMongo.UpdateRefresh("64e1ade986a817525a13d9fd", "blablabla")
 //	fmt.Println(res1, " \n", err)
